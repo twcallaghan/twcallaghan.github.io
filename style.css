@@ -7,7 +7,7 @@
 
 .profile-pic1{
     width: 31vw;
-    height: 57vh;
+    height: 60vh;
     position: absolute;
     top: 30%;
     left: 8%;
@@ -18,7 +18,7 @@
 }
 
 .s1{
-    background: linear-gradient(to right top, #8BA6AD, white)
+    background: linear-gradient(to right top, rgb(125, 166, 177), white)
 }
 
 .section h1 {
