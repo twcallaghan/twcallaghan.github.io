@@ -2,17 +2,15 @@
     font-family: 'Montserrat';
 }
 
-.profile-pic1{
+.profile-pic1 {
     border: white;
     border-style: solid;
     width: 90%;
-    align-self: center;
-    
 }
 
 .section h1 {
     font-size: 42px;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .title {
@@ -26,8 +24,6 @@
 .bio {
     font-size: 20px;
     padding-left: 3px;
-    font-weight: bold;
-    color: black;
 }
 
 #section0 {
@@ -70,9 +66,12 @@ footer {
     font-weight: bold;
 }
 
+.home-button {
+    border-color: rgb(87, 219, 255);
+}
+
 #ed-button {
     border-color: red;
-    box-shadow: inset;
 }
 
 #workex-button {
@@ -101,21 +100,9 @@ footer {
     }
 }
 
-#umass-title {
-    font-weight: bold;
-}
-
-#highschool-title {
-    font-weight: bold;
-}
-
 #umass-pic {
     border: transparent;
     padding-left: 15px;
-}
-
-.home-button {
-    border-color: rgb(87, 219, 255);
 }
 
 #staples-pic {
