@@ -1,13 +1,13 @@
 new fullpage('#fullpage', {
     navigation: true,
     autoScrolling: false,
+    fitToSection: false,
     anchors: ['homepage', 'educationpage'],
 
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
         let edbt = document.getElementById("ed-button");
-        if (destination.index === 0) {
-            edbt.hidden = false;
+        if (destination.index === 0 && origin.index === 0) {
             const h1anim = section.querySelector("h1");
             const panim = section.querySelector("p");
             const imganim = section.querySelector("img");
@@ -24,6 +24,10 @@ new fullpage('#fullpage', {
             gsap.fromTo(prjbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(contactbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
 
+        }
+
+        if (destination.index === 0) {
+            edbt.hidden = false;
         }
 
 

@@ -33,15 +33,21 @@
 #section0 {
     background: linear-gradient(to right top, rgb(125, 166, 177), white);
     margin-right: 0px;
-    margin-left: 0px
-;}
+    margin-left: 0px;
+}
+
+#section1 {
+    background: linear-gradient(to left bottom, rgb(255, 91, 91), white);
+    margin-right: 0px;
+    margin-left: 0px;
+}
 
 .btn-lg {
     font-weight: bold;
 }
 
 #ed-button {
-    border-color: orange;
+    border-color: red;
     box-shadow: inset;
 }
 
@@ -54,9 +60,22 @@
 }
 
 #contact-button {
-    border-color: red;
+    border-color: darkorange;
 }
 
-#picture-col {
-    
+@media only screen and (min-width: 1700px) {
+    #profile-picture-col {
+        top: -10%;
+    }
+    #umass-picture {
+        top: -10%;
+    }
+}
+
+#umass-title {
+    font-weight: bold;
+}
+
+#highschool-title {
+    font-weight: bold;
 }
