@@ -7,6 +7,7 @@
     border-style: solid;
     width: 90%;
     align-self: center;
+    
 }
 
 .section h1 {
@@ -31,7 +32,9 @@
 
 #section0 {
     background: linear-gradient(to right top, rgb(125, 166, 177), white);
-}
+    margin-right: 0px;
+    margin-left: 0px
+;}
 
 .btn-lg {
     font-weight: bold;
@@ -39,6 +42,7 @@
 
 #ed-button {
     border-color: orange;
+    box-shadow: inset;
 }
 
 #workex-button {
@@ -51,4 +55,8 @@
 
 #contact-button {
     border-color: red;
+}
+
+#picture-col {
+    
 }
