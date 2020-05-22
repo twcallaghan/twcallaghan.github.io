@@ -1,25 +1,34 @@
+let edfirstload = false;
+let workfirstload = false;
+let projectsfirstload = false;
+let contactfirstload = false;
+
 new fullpage('#fullpage', {
     navigation: true,
     autoScrolling: false,
     fitToSection: false,
     anchors: ['homepage', 'educationpage', 'workexpage', 'projectspage', 'contactpage'],
 
+
+
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
-        let edbt = document.getElementById("ed-button");
+
+        const edbtanim = section.querySelector("button[id='ed-button']");
+        const wrexbtn = section.querySelector("button[id='workex-button']");
+        const prjbtn = section.querySelector("button[id='projects-button']");
+        const contactbtn = section.querySelector("button[id='contact-button']");
+        const homebtn = section.querySelector("button[id='home-button']");
+
         if (destination.index === 0 && origin.index === 0) {
             const h1anim = section.querySelector("h1");
             const panim = section.querySelector("p");
             const imganim = section.querySelector("img");
-            const edbtanim = document.querySelector("button[id='ed-button']");
-            const wrexbtn = document.querySelector("button[id='workex-button']");
-            const prjbtn = document.querySelector("button[id='projects-button']");
-            const contactbtn = document.querySelector("button[id='contact-button']");
-            const homebtn = document.querySelector("button[id='home-button']");
 
             gsap.fromTo(h1anim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(panim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(imganim, 1.5, {y: 50, opacity: 0}, {y:0, opacity:1});
+
             gsap.fromTo(edbtanim, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(wrexbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(prjbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
@@ -28,8 +37,37 @@ new fullpage('#fullpage', {
         }
 
 
-
     },
+
+    onLeave: (origin, destination, direction) => {
+        const section = destination.item;
+
+        const edbtanim = section.querySelector("button[id='ed-button']");
+        const wrexbtn = section.querySelector("button[id='workex-button']");
+        const prjbtn = section.querySelector("button[id='projects-button']");
+        const contactbtn = section.querySelector("button[id='contact-button']");
+        const homebtn = section.querySelector("button[id='home-button']");
+
+        if (destination.index === 1 && edfirstload === false) {
+            edfirstload = true;
+
+            const h1anim = section.querySelector("h1");
+            const h3anim = section.querySelector("h3");
+            const imganim = section.querySelector("img");
+
+            gsap.fromTo(imganim, 1.5, {x: -50, opacity: 0}, {x: 0, opacity: 1, delay: 0.5});
+            gsap.fromTo(h1anim, 1.5, {y: 50, opacity: 0}, {y: 0, opacity: 1, delay: 0.5});
+            gsap.fromTo(h3anim, 1.5, {y: 50, opacity: 0}, {y: 0, opacity: 1, delay: 0.5});
+
+            gsap.fromTo(edbtanim, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
+            gsap.fromTo(wrexbtn, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
+            gsap.fromTo(prjbtn, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
+            gsap.fromTo(contactbtn, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
+            gsap.fromTo(homebtn, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
+        }
+
+        
+    }
 
 });
 
