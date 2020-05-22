@@ -2,7 +2,7 @@ new fullpage('#fullpage', {
     navigation: true,
     autoScrolling: false,
     fitToSection: false,
-    anchors: ['homepage', 'educationpage'],
+    anchors: ['homepage', 'educationpage', 'workexpage', 'projectspage', 'contactpage'],
 
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
@@ -15,6 +15,7 @@ new fullpage('#fullpage', {
             const wrexbtn = document.querySelector("button[id='workex-button']");
             const prjbtn = document.querySelector("button[id='projects-button']");
             const contactbtn = document.querySelector("button[id='contact-button']");
+            const homebtn = document.querySelector("button[id='home-button']");
 
             gsap.fromTo(h1anim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(panim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
@@ -23,24 +24,11 @@ new fullpage('#fullpage', {
             gsap.fromTo(wrexbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(prjbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(contactbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
-
-        }
-
-        if (destination.index === 0) {
-            edbt.hidden = false;
+            gsap.fromTo(homebtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
         }
 
 
-    },
 
-    onLeave: (origin, destination, direction) => {
-        let edbt = document.getElementById("ed-button");
-        if (destination.index !== 0) {
-            edbt.disabled = true;
-            edbt.hidden = true;
-        } else {
-            edbt.disabled = false;
-        }
     },
 
 });
@@ -51,5 +39,14 @@ $("button").click(function(e){
     console.log(idClicked);
     if (idClicked === "ed-button") {
         fullpage_api.moveTo('educationpage');
+    } else if (idClicked == "home-button") {
+        fullpage_api.moveTo('homepage');
+    } else if (idClicked == "workex-button") {
+        fullpage_api.moveTo('workexpage');
+    } else if (idClicked == "projects-button") {
+        fullpage_api.moveTo('projectspage');
+    } else if (idClicked == "contact-button") {
+        fullpage_api.moveTo('contactpage');
     }
+
 });

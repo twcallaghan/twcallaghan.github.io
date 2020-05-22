@@ -42,6 +42,30 @@
     margin-left: 0px;
 }
 
+#section2 {
+    background: linear-gradient(to left top, rgb(120, 255, 120), white);
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#section3 {
+    background: linear-gradient(to right bottom, rgb(228, 68, 228), white);
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#section4 {
+    background: linear-gradient(to top, rgb(255, 164, 53), white);
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0%;
+}
+
 .btn-lg {
     font-weight: bold;
 }
@@ -67,6 +91,14 @@
     #profile-picture-col {
         top: -10%;
     }
+
+    #workex-text {
+        padding-left: 40px;
+    }
+    
+    #ed-text {
+        padding-left: 30px;
+    }
 }
 
 #umass-title {
@@ -79,4 +111,17 @@
 
 #umass-pic {
     border: transparent;
+    padding-left: 15px;
+}
+
+.home-button {
+    border-color: rgb(87, 219, 255);
+}
+
+#staples-pic {
+    padding-left: 22px;
+}
+
+#chef-pic {
+    padding-left: 10px;
 }
