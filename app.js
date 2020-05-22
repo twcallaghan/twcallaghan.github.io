@@ -2,7 +2,6 @@ new fullpage('#fullpage', {
     navigation: true,
 
     anchors: ['homepage', 'educationpage'],
-    sectionsColor: ['linear-gradient(to right top, rgb(125, 166, 177), white)', 'orange'],
 
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
@@ -12,10 +11,10 @@ new fullpage('#fullpage', {
             const h1anim = section.querySelector("h1");
             const panim = section.querySelector("p");
             const imganim = section.querySelector("img");
-            const edbtanim = document.querySelector("input[id='ed-button']");
-            const wrexbtn = document.querySelector("input[id='workex-button']");
-            const prjbtn = document.querySelector("input[id='projects-button']");
-            const contactbtn = document.querySelector("input[id='contact-button']");
+            const edbtanim = document.querySelector("button[id='ed-button']");
+            const wrexbtn = document.querySelector("button[id='workex-button']");
+            const prjbtn = document.querySelector("button[id='projects-button']");
+            const contactbtn = document.querySelector("button[id='contact-button']");
 
             gsap.fromTo(h1anim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
             gsap.fromTo(panim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
@@ -43,8 +42,9 @@ new fullpage('#fullpage', {
 });
 
 
-$("input").click(function(e){
+$("button").click(function(e){
     let idClicked = e.target.id;
+    console.log(idClicked);
     if (idClicked === "ed-button") {
         fullpage_api.moveTo('educationpage');
     }

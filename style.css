@@ -6,15 +6,12 @@
 }
 
 .profile-pic1{
-    width: 31vw;
-    height: 60vh;
     position: absolute;
-    top: 30%;
-    left: 8%;
-    border-radius: 50%;
     border: white;
     border-style: solid;
-    transform: translate(-8%, -30%);
+    width: 90%;
+    left: 7%;
+    top: 60%;
 }
 
 .section h1 {
@@ -23,8 +20,10 @@
     font-weight: bolder;
 }
 
-.description {
+.title {
     position: absolute;
+    top: 100px;
+    color: black;
 }
 
 .bio {
@@ -32,40 +31,29 @@
     padding-left: 3px;
     padding-top: 8vh;
     font-weight: bold;
-}
-
-
-
-.workex-button {
-    position: absolute;
-    top: 28vh;
-    left: 71vw;
-    width: 16vw;
-    font-size: 32px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.projects-button {
-    position: absolute;
-    top: 35vh;
-    font-size: 32px;
-    left: 71vw;
-    width: 16vw;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.contact-button {
-    position: absolute;
-    top: 42vh;
-    font-size: 32px;
-    left: 71vw;
-    width: 16vw;
-    cursor: pointer;
-    z-index: 999;
+    color: black;
 }
 
 #section0 {
     background: linear-gradient(to right top, rgb(125, 166, 177), white);
+}
+
+.btn-lg {
+    font-weight: bold;
+}
+
+#ed-button {
+    border-color: orange;
+}
+
+#workex-button {
+    border-color: green;
+}
+
+#projects-button {
+    border-color: purple;
+}
+
+#contact-button {
+    border-color: red;
 }
