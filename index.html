@@ -6,15 +6,20 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="fullpage.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Thomas Callaghan</title>
 </head>
 <body>
-    
+
     <div id="fullpage">
-        <section class="section s1">
-            <img src="./img/cropped_profile_pic.jpg" alt="profile-pic" class="profile-pic1">
-            <div class="description">
-                <h1>Hi, I'm Thomas Callaghan.</h1>
+        <div class="section row" id="section0">
+            <div class="col-sm-4">
+                <img src="./img/cropped_profile_pic.jpg" alt="profile-pic" class="profile-pic1 img-circle img-responsive">
+            </div>
+            <div id="description" class="col-sm-4">
+                <h1 id='title'>Hi, I'm Thomas Callaghan.</h1>
                 <p class="bio">I'm pursuing a BS in Computer Science at UMass Amherst. I'm a developer, gamer, lover of everything sci-fi, and industry tech talk coordinator of the cybersecurity club at UMass Amherst. 
                     I'm currently trying to become a full-stack developer and I will soon start my internship at Staples as a Technical Operations and Cloud Engineering intern.
                     <br><br>
@@ -25,7 +30,16 @@
                     <a href="https://www.linkedin.com/in/twcallaghan/" class="linkedin-link"><img src="img/LinkedIn_logo_initials.png" width=100vw height=100vh></a>
                 </p>
             </div>
-        </section>
+            <div class="col-sm-4" id="buttons">
+                <button type="button" id="ed-button" class="ed-button btn-lg btn-outline-primary">Education</button> <br>
+                <button id="workex-button" class="workex-button btn-lg btn-outline-primary" type="button">Work Experience</button>
+                <button id="projects-button" class="projects-button btn-lg btn-outline-primary" type="button">Projects</input>
+                <button id="contact-button" class="contact-button btn-lg btn-outline-primary" type="button">Contact Me</button>
+            </div>
+        </div>
+        <div class="section">
+            <div class="slide1">This is the education section</div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>

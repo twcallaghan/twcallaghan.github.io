@@ -1,12 +1,51 @@
 new fullpage('#fullpage', {
+    navigation: true,
+
+    anchors: ['homepage', 'educationpage'],
+    sectionsColor: ['linear-gradient(to right top, rgb(125, 166, 177), white)', 'orange'],
+
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
+        let edbt = document.getElementById("ed-button");
+        if (destination.index === 0) {
+            edbt.hidden = false;
+            const h1anim = section.querySelector("h1");
+            const panim = section.querySelector("p");
+            const imganim = section.querySelector("img");
+            const edbtanim = document.querySelector("input[id='ed-button']");
+            const wrexbtn = document.querySelector("input[id='workex-button']");
+            const prjbtn = document.querySelector("input[id='projects-button']");
+            const contactbtn = document.querySelector("input[id='contact-button']");
 
-        const h1anim = section.querySelector("h1");
-        const panim = section.querySelector("p");
-        const imganim = section.querySelector("img");
-        gsap.fromTo(h1anim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
-        gsap.fromTo(panim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
-        gsap.fromTo(imganim, 1.5, {y: '-200', opacity: 0}, {y:-250, opacity:1});
+            gsap.fromTo(h1anim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
+            gsap.fromTo(panim, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1});
+            gsap.fromTo(imganim, 1.5, {y: '-200', opacity: 0}, {y:-250, opacity:1});
+            gsap.fromTo(edbtanim, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
+            gsap.fromTo(wrexbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
+            gsap.fromTo(prjbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
+            gsap.fromTo(contactbtn, 1.5, {y: 50, opacity: 0}, {y: 0, opacity:1});
+
+        }
+
+
+    },
+
+    onLeave: (origin, destination, direction) => {
+        let edbt = document.getElementById("ed-button");
+        if (destination.index !== 0) {
+            edbt.disabled = true;
+            edbt.hidden = true;
+        } else {
+            edbt.disabled = false;
+        }
+    },
+
+});
+
+
+$("input").click(function(e){
+    let idClicked = e.target.id;
+    if (idClicked === "ed-button") {
+        fullpage_api.moveTo('educationpage');
     }
 });
