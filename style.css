@@ -37,7 +37,7 @@
 }
 
 #section1 {
-    background: linear-gradient(to left bottom, rgb(255, 91, 91), white);
+    background: linear-gradient(to left bottom, rgb(255, 106, 106), white);
     margin-right: 0px;
     margin-left: 0px;
 }
@@ -67,9 +67,6 @@
     #profile-picture-col {
         top: -10%;
     }
-    #umass-picture {
-        top: -10%;
-    }
 }
 
 #umass-title {
@@ -78,4 +75,8 @@
 
 #highschool-title {
     font-weight: bold;
+}
+
+#umass-pic {
+    border: transparent;
 }
