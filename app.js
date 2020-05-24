@@ -1,13 +1,19 @@
+// Ensuring that the animations only run on the first time that each section is visited
 let edfirstload = false;
 let workfirstload = false;
 let projectsfirstload = false;
 let contactfirstload = false;
 let homefirstload = false;
 
+// This is setting up the fullpage.js 
 new fullpage('#fullpage', {
+    // navigation dots on the right side
     navigation: true,
+    // if you scroll more than half the page down then it will automatically scroll to the next page
     autoScrolling: false,
+    // if you're a little bit off on a section and you don't move for a few seconds then the page will automatically align the section to your device
     fitToSection: false,
+    // basically just names that can be used by fullpage.js to better identify the sections
     anchors: ['homepage', 'educationpage', 'workexpage', 'projectspage', 'contactpage'],
 
 
@@ -15,6 +21,7 @@ new fullpage('#fullpage', {
     afterLoad: (origin, destination, direction) => {
         const section = destination.item;
 
+        // Getting all the buttons that stay constant over the pages
         const edbtanim = section.querySelector("button[id='ed-button']");
         const wrexbtn = section.querySelector("button[id='workex-button']");
         const prjbtn = section.querySelector("button[id='projects-button']");
@@ -41,6 +48,7 @@ new fullpage('#fullpage', {
 
     },
 
+    // Animations for when the user leaves another page heading towards a new page for the first time
     onLeave: (origin, destination, direction) => {
         const section = destination.item;
 
@@ -85,6 +93,7 @@ new fullpage('#fullpage', {
             gsap.fromTo(homebtn, 1.5, {x: 50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
         }
 
+        // Workexperience page
         if (destination.index === 2 && workfirstload === false) {
             workfirstload = true;
 
@@ -105,6 +114,7 @@ new fullpage('#fullpage', {
             gsap.fromTo(homebtn, 1.5, {y: -50, opacity: 0}, {y: 0, opacity:1, delay: 0.5});
         }
 
+        // Projects page
         if (destination.index === 3 && projectsfirstload === false) {
             projectsfirstload = true;
 
@@ -119,6 +129,7 @@ new fullpage('#fullpage', {
             gsap.fromTo(homebtn, 1.5, {x: -50, opacity: 0}, {x: 0, opacity:1, delay: 0.5});
         }
 
+        // Contacts page
         if (destination.index === 4 & contactfirstload === false) {
             contactfirstload = true;
             
@@ -139,7 +150,7 @@ new fullpage('#fullpage', {
     }
 });
 
-
+// Detecting button clicks that then navigate to the appropriate page
 $("button").click(function(e){
     let idClicked = e.target.id;
     console.log(idClicked);
@@ -154,5 +165,4 @@ $("button").click(function(e){
     } else if (idClicked == "contact-button") {
         fullpage_api.moveTo('contactpage');
     }
-
 });

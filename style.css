@@ -1,7 +1,9 @@
+/* Setting the font */
 *{
     font-family: 'Montserrat';
 }
 
+/* Getting rid of the scrollbar so that the navigation dots from fullpage.js can be used instead */
 html {
     overflow: scroll;
 }
@@ -10,6 +12,7 @@ html {
     background: transparent;
 }
 
+/* Making a border around the home screen profile picture */
 .profile-pic1 {
     border: white;
     border-style: solid;
@@ -34,6 +37,7 @@ html {
     padding-left: 3px;
 }
 
+/* This sets the individual background colors of each section */
 #section0 {
     background: linear-gradient(to right top, rgb(125, 166, 177), white);
     margin-right: 0px;
@@ -64,12 +68,14 @@ html {
     margin-left: 0px;
 }
 
+/* Forcing the footer to be at the bottom right of the page */
 footer {
     position: absolute;
     bottom: 0px;
     right: 0%;
 }
 
+/* Making button fonts bold and setting all the border colors */
 .btn-lg {
     font-weight: bold;
 }
@@ -94,6 +100,7 @@ footer {
     border-color: darkorange;
 }
 
+/* Making formatting better for pictures when the screen is big enough */
 @media only screen and (min-width: 1700px) {
     #profile-picture-col {
         top: -10%;
@@ -108,6 +115,7 @@ footer {
     }
 }
 
+/* Better positioning for individual pictures */
 #umass-pic {
     border: transparent;
     padding-left: 15px;
