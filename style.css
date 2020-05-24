@@ -2,6 +2,14 @@
     font-family: 'Montserrat';
 }
 
+html {
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width:0px;
+    background: transparent;
+}
+
 .profile-pic1 {
     border: white;
     border-style: solid;
