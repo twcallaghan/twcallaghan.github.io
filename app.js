@@ -7,6 +7,8 @@ let homefirstload = false;
 
 // This is setting up the fullpage.js 
 new fullpage('#fullpage', {
+    // fullpage.js open source key
+    licenseKey: 'e$kyWVH!a6',
     // navigation dots on the right side
     navigation: true,
     // if you scroll more than half the page down then it will automatically scroll to the next page
